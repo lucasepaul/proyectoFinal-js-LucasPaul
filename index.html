@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--HEAD-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/music-note.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Home del Metrónomo App</title>
+</head>
+<!--FIN HEAD-->
+<!--BODY: Dentro se encuentra el main y el footer realizados con Bootstrap-->
+
+<body>
+    <main>
+        <h1 id="titulo">Proyecto Final JS - Metrónomo App</h1>
+        <h2>Reproductor Clásico</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label for="tempo">Tempo (BPM)</label>
+                        <input id="tempo" class='form-control' type="number" value='60' min='20' max='180'
+                            onChange="metronomeApp.setTempo(this.value);">
+                    </div>
+                    <div class="form-group">
+                        <label for="metroSound">Sound Click Type</label>
+                        <select id="metroSound" class="form-control"
+                            onChange="metronomeApp.setSound(this.selectedIndex + 1)">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="visType">Visualization Mode</label>
+                        <select id="visType" class="form-control"
+                            onChange="metronomeApp.setVisualization(this.selectedIndex)">
+                        </select>
+                    </div>
+                    <input id="metronome" class="form-control btn btn-dark" type="button" value="Start"
+                        onclick="metronomeApp.toggle()" />
+                </div>
+                <div id='visualization' class="col-sm">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__creditosyterminos">Privacy Policy | Terms | Lucas Paul & CoderHouse | 2022</p>
+    </footer>
+    <!--Enlace SCRIPTS P5, BOOTSTRAP y SWEET ALERT-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/metronome-sound.js"></script>
+    <script src="js/visualization.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+<!--FIN BODY-->
+
+</html>
